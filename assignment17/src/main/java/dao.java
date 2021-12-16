@@ -27,7 +27,7 @@ public class dao {
         int recordsInserted = 0;
         Connection connection = DBUtil.getDBConnection();
         try{
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into EMP(EMP_ID, EMP_NAME, SALARY, PASSW, DEPT_ID) values (?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into Pro(P_Name, P_Price, P_Quantity) values (?,?,?)");
             preparedStatement.setString(1, p.getName());
             preparedStatement.setDouble(2, p.getPrice());
             preparedStatement.setInt(3,p.getQuantity());
@@ -42,7 +42,7 @@ public class dao {
         dao pdao = new dao();
         Product p = new Product();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter employee information: ");
+        System.out.println("Enter product information: ");
         p.setName(scanner.next());
         p.setPrice(scanner.nextInt());
         p.setQuantity(scanner.nextInt());
